@@ -90,7 +90,7 @@ DATABASES = {
         'NAME': 'codemy',
         'USER': 'root',
         'PASSWORD': 'Su8.wia&2',
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',
         'PORT':'3306',
     }
 }

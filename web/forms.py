@@ -17,6 +17,8 @@ class SignUpForm(UserCreationForm):
         fields = ('username' , 'first_name' , 'last_name' , 'password1' , 'password2')
 
     def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)  # Initialize fields first
+
 
         self.fields['username'].widget.attrs['class'] = 'form-control'
         self.fields['username'].widget.attrs['placeholder'] = 'User Name'
