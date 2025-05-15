@@ -29,8 +29,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-q$@p^*i*-7y054^v2-#@ll8xj=
 DEBUG = True
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['CRMapp.onrender.com', '127.0.0.1', 'localhost']
-
+ALLOWED_HOSTS = ['crmapp-bakx.onrender.com', 'localhost']
 
 # Application definition
 
