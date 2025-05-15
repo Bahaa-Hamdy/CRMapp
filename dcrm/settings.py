@@ -22,14 +22,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-q$@p^*i*-7y054^v2-#@ll8xj=$qrfg9sj53b@q)xa28tp(4*f'
-SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-q$@p^*i*-7y054^v2-#@ll8xj=$qrfg9sj53b@q)xa28tp(4*f')
+SECRET_KEY = 'django-insecure-q$@p^*i*-7y054^v2-#@ll8xj=$qrfg9sj53b@q)xa28tp(4*f'
+# SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-q$@p^*i*-7y054^v2-#@ll8xj=$qrfg9sj53b@q)xa28tp(4*f')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['crmapp-bakx.onrender.com', 'localhost']
+ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['crmapp-bakx.onrender.com', 'localhost']
 
 # Application definition
 
@@ -53,8 +53,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     
-    'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'django.middleware.security.SecurityMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'dcrm.urls'
@@ -83,15 +83,15 @@ WSGI_APPLICATION = 'dcrm.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
         
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'codemy',
-        # 'USER': 'root',
-        # 'PASSWORD': 'Su8.wia&2',
-        # 'HOST': '127.0.0.1',
-        # 'PORT':'3306',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'codemy',
+        'USER': 'root',
+        'PASSWORD': 'Su8.wia&2',
+        'HOST': '127.0.0.1',
+        'PORT':'3306',
     }
 }
 
