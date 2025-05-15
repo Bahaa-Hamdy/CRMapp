@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +22,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-q$@p^*i*-7y054^v2-#@ll8xj=$qrfg9sj53b@q)xa28tp(4*f'
+# SECRET_KEY = 'django-insecure-q$@p^*i*-7y054^v2-#@ll8xj=$qrfg9sj53b@q)xa28tp(4*f'
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-q$@p^*i*-7y054^v2-#@ll8xj=$qrfg9sj53b@q)xa28tp(4*f')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['CRMapp.onrender.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -48,6 +52,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'dcrm.urls'
@@ -82,7 +90,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'codemy',
         'USER': 'root',
-        'PASSWORD': 'password',
+        'PASSWORD': 'Su8.wia&2',
         'HOST': 'localhost',
         'PORT':'3306',
     }
@@ -124,6 +132,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
